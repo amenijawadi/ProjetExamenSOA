@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+service AnalyticsService {
+  rpc GetFeedbackStats (FeedbackStatsRequest) returns (FeedbackStatsResponse);
+  rpc GetSessionStats (SessionStatsRequest) returns (SessionStatsResponse);
+}
+
+message FeedbackStatsRequest {
+  string studentId = 1;
+}
+
+message FeedbackStatsResponse {
+  int32 count = 1;
+}
+
+message SessionStatsRequest {
+  string sessionId = 1;
+}
+
+message SessionStatsResponse {
+  int32 count = 1;
+}
